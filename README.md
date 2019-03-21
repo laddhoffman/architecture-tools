@@ -58,16 +58,38 @@ From this we can derive information--
     - Message ID
     - Use case ID
     - Transacion ID
-    - Destination
+    - Routing Mechanism
+    - Routing Key
     - Timestamp
     - Message Type
     - Message Properties (Optional)
 - When an actor receives a message
   - Actor should report the following:
-    - Origin actor ID
+    - Source
+    - Transmission Pathway
     - Actor ID
     - Role
     - Message ID
     - Message Type
-    - Message Properties
+    - Message Properties (Optional)
     - Timestamp
+- When an actor stores data
+  - Actor should report the following
+    - Actor ID
+    - Role
+    - Data Type
+    - Data Properties (Optional)
+    - Timestamp
+
+Routing Mechanism may be one of the following:
+  - Direct
+  - Topic
+  - Fan-out
+
+Routing Key will depend on the routing mechanism.
+
+# Questions
+
+Should we attempt to model/measure data storage/retrieval and message routing
+components themselves? Or is it sufficient or preferable to exclude these and
+only model the actors?
